@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "realhatefk-me",
+  "name": "realhatefk",
   "compatibility_date": "2025-04-01",
   "assets": {
     // Astro writes prerendered static output under `dist/client/` when an
