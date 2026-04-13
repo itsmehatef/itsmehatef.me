@@ -3,6 +3,12 @@ layout: ../layouts/AboutLayout.astro
 title: "About Hatef"
 ---
 
+<img
+  src="/images/realhatefk.png"
+  alt="Hatef Kasraei"
+  class="w-full md:w-56 md:float-right md:ml-6 md:mb-4 mb-6 rounded-lg"
+/>
+
 hi, i'm @realhatefk.
 
 i build random projects, based on whatever pops to my head. could be an app, web service, or even an ai agent.
