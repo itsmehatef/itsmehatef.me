@@ -29,11 +29,11 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <img
           src="/images/hero-avatar.png"
           alt="Hatef Kasraei"
-          class="h-28 w-28 flex-shrink-0 rounded-full object-cover"
+          class="h-48 w-48 flex-shrink-0 rounded-full object-cover"
         />
         <div class="flex-1 text-center sm:text-left">
-          <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-            Hi, I'm Hatef.
+          <h1 class="mb-4 inline-block text-2xl font-bold sm:mb-8 sm:text-3xl">
+            hi, i'm @realhatefk.
           </h1>
           <a
             target="_blank"
@@ -51,16 +51,10 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           </a>
 
           <p>
-            I build infrastructure for AI agents — most recently
-            <LinkButton
-              class="underline decoration-dashed underline-offset-4 hover:text-accent"
-              href="https://github.com/realhatefk/dclaw"
-            >
-              dclaw
-            </LinkButton>, a container-native multi-agent platform with
-            mandatory sandboxing. This site is where I write about what I ship.
+            i spend too much time thinking about how ai agents should run
+            safely. also apps, web services, and whatever else catches my
+            attention. this is where it all lands.
           </p>
-          <p class="mt-2">Notes on AI agents, Docker, and the tools I ship.</p>
           {
             // only display if at least one social link is enabled
             SOCIALS.length > 0 && (

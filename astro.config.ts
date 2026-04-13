@@ -25,14 +25,7 @@ export default defineConfig({
   // Cloudflare Pages as pure assets (wrangler.jsonc), so the SSR bundle is
   // never actually invoked in prod — only the prerendered `dist/` is served.
   adapter: node({ mode: "standalone" }),
-  integrations: [
-    react(),
-    markdoc(),
-    keystatic(),
-    sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
-    }),
-  ],
+  integrations: [react(), markdoc(), keystatic(), sitemap()],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
     shikiConfig: {
