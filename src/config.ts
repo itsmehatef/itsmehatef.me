@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://realhatefk.me/",
   desc: "i post about programming, technology, and sometimes my personal life.",
   title: "Hatef Kasraei",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 10,

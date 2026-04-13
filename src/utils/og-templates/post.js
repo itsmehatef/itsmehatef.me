@@ -1,7 +1,13 @@
 import satori from "satori";
+import fs from "node:fs";
+import path from "node:path";
 // import { html } from "satori-html";
-import { SITE } from "@/config";
 import loadGoogleFonts from "../loadGoogleFont";
+
+const avatarBuffer = fs.readFileSync(
+  path.resolve("public/images/hero-avatar.png")
+);
+const avatarDataUri = `data:image/png;base64,${avatarBuffer.toString("base64")}`;
 
 // const markup = html`<div
 //       style={{
@@ -93,7 +99,15 @@ import loadGoogleFonts from "../loadGoogleFont";
 //       </div>
 //     </div>`;
 
-export default async post => {
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+
+export default async (post, readingTime = 1) => {
+  const formattedDate = dateFormatter.format(new Date(post.data.pubDatetime));
+  const description = post.data.description;
   return satori(
     {
       type: "div",
@@ -152,15 +166,46 @@ export default async post => {
                   },
                   children: [
                     {
-                      type: "p",
+                      type: "div",
                       props: {
                         style: {
-                          fontSize: 72,
-                          fontWeight: "bold",
-                          maxHeight: "84%",
+                          display: "flex",
+                          flexDirection: "column",
                           overflow: "hidden",
                         },
-                        children: post.data.title,
+                        children: [
+                          {
+                            type: "p",
+                            props: {
+                              style: {
+                                fontSize: 72,
+                                fontWeight: "bold",
+                                margin: 0,
+                                overflow: "hidden",
+                              },
+                              children: post.data.title,
+                            },
+                          },
+                          ...(description
+                            ? [
+                                {
+                                  type: "p",
+                                  props: {
+                                    style: {
+                                      fontSize: 32,
+                                      color: "#555",
+                                      marginTop: 16,
+                                      marginBottom: 0,
+                                      lineHeight: 1.3,
+                                      maxHeight: 84,
+                                      overflow: "hidden",
+                                    },
+                                    children: description,
+                                  },
+                                },
+                              ]
+                            : []),
+                        ],
                       },
                     },
                     {
@@ -169,41 +214,89 @@ export default async post => {
                         style: {
                           display: "flex",
                           justifyContent: "space-between",
+                          alignItems: "center",
                           width: "100%",
                           marginBottom: "8px",
                           fontSize: 28,
                         },
                         children: [
                           {
-                            type: "span",
+                            type: "div",
                             props: {
+                              style: {
+                                display: "flex",
+                                alignItems: "center",
+                              },
                               children: [
-                                "by ",
                                 {
-                                  type: "span",
+                                  type: "img",
                                   props: {
-                                    style: { color: "transparent" },
-                                    children: '"',
+                                    src: avatarDataUri,
+                                    width: 96,
+                                    height: 96,
+                                    style: {
+                                      width: 96,
+                                      height: 96,
+                                      borderRadius: "50%",
+                                      border: "3px solid #000",
+                                      marginRight: 16,
+                                      objectFit: "cover",
+                                    },
                                   },
                                 },
                                 {
                                   type: "span",
                                   props: {
-                                    style: {
-                                      overflow: "hidden",
-                                      fontWeight: "bold",
-                                    },
-                                    children: post.data.author,
+                                    style: { display: "flex" },
+                                    children: [
+                                      "by ",
+                                      {
+                                        type: "span",
+                                        props: {
+                                          style: { color: "transparent" },
+                                          children: '"',
+                                        },
+                                      },
+                                      {
+                                        type: "span",
+                                        props: {
+                                          style: {
+                                            overflow: "hidden",
+                                            fontWeight: "bold",
+                                          },
+                                          children: "@realhatefk",
+                                        },
+                                      },
+                                      {
+                                        type: "span",
+                                        props: {
+                                          style: { margin: "0 0.4em" },
+                                          children: "·",
+                                        },
+                                      },
+                                      {
+                                        type: "span",
+                                        props: {
+                                          children: formattedDate,
+                                        },
+                                      },
+                                      {
+                                        type: "span",
+                                        props: {
+                                          style: { margin: "0 0.4em" },
+                                          children: "·",
+                                        },
+                                      },
+                                      {
+                                        type: "span",
+                                        props: {
+                                          children: `${readingTime} min read`,
+                                        },
+                                      },
+                                    ],
                                   },
                                 },
                               ],
-                            },
-                          },
-                          {
-                            type: "span",
-                            props: {
-                              style: { overflow: "hidden", fontWeight: "bold" },
-                              children: SITE.title,
                             },
                           },
                         ],
@@ -222,7 +315,11 @@ export default async post => {
       height: 630,
       embedFont: true,
       fonts: await loadGoogleFonts(
-        post.data.title + post.data.author + SITE.title + "by"
+        post.data.title +
+          post.data.author +
+          (description || "") +
+          "by @realhatefk · min read 0123456789, " +
+          "JanFebMarAprMayJunJulAugSepOctNovDec"
       ),
     }
   );

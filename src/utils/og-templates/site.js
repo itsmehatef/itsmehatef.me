@@ -1,6 +1,13 @@
 import satori from "satori";
+import fs from "node:fs";
+import path from "node:path";
 import { SITE } from "@/config";
 import loadGoogleFonts from "../loadGoogleFont";
+
+const avatarBuffer = fs.readFileSync(
+  path.resolve("public/images/hero-avatar.png")
+);
+const avatarDataUri = `data:image/png;base64,${avatarBuffer.toString("base64")}`;
 
 export default async () => {
   return satori(
@@ -75,16 +82,32 @@ export default async () => {
                         },
                         children: [
                           {
+                            type: "img",
+                            props: {
+                              src: avatarDataUri,
+                              width: 180,
+                              height: 180,
+                              style: {
+                                width: 180,
+                                height: 180,
+                                borderRadius: "50%",
+                                border: "4px solid #000",
+                                marginBottom: 24,
+                                objectFit: "cover",
+                              },
+                            },
+                          },
+                          {
                             type: "p",
                             props: {
-                              style: { fontSize: 72, fontWeight: "bold" },
+                              style: { fontSize: 72, fontWeight: "bold", margin: 0 },
                               children: SITE.title,
                             },
                           },
                           {
                             type: "p",
                             props: {
-                              style: { fontSize: 28 },
+                              style: { fontSize: 28, marginTop: 12 },
                               children: SITE.desc,
                             },
                           },

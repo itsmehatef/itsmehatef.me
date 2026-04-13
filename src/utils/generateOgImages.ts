@@ -9,8 +9,15 @@ function svgBufferToPngBuffer(svg: string) {
   return pngData.asPng();
 }
 
+function computeReadingTime(body: string | undefined): number {
+  if (!body) return 1;
+  const words = body.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+
 export async function generateOgImageForPost(post: CollectionEntry<"blog">) {
-  const svg = await postOgImage(post);
+  const readingTime = computeReadingTime(post.body);
+  const svg = await postOgImage(post, readingTime);
   return svgBufferToPngBuffer(svg);
 }
 
