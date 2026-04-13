@@ -113,7 +113,8 @@ export default async (post, readingTime = 1) => {
       type: "div",
       props: {
         style: {
-          background: "#fefbfb",
+          background: "#212737",
+          color: "#eaedf3",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -128,8 +129,8 @@ export default async (post, readingTime = 1) => {
                 position: "absolute",
                 top: "-1px",
                 right: "-1px",
-                border: "4px solid #000",
-                background: "#ecebeb",
+                border: "4px solid #eaedf3",
+                background: "#343f60",
                 opacity: "0.9",
                 borderRadius: "4px",
                 display: "flex",
@@ -144,8 +145,8 @@ export default async (post, readingTime = 1) => {
             type: "div",
             props: {
               style: {
-                border: "4px solid #000",
-                background: "#fefbfb",
+                border: "4px solid #eaedf3",
+                background: "#212737",
                 borderRadius: "4px",
                 display: "flex",
                 justifyContent: "center",
@@ -193,7 +194,7 @@ export default async (post, readingTime = 1) => {
                                   props: {
                                     style: {
                                       fontSize: 32,
-                                      color: "#555",
+                                      color: "#9aa1b5",
                                       marginTop: 16,
                                       marginBottom: 0,
                                       lineHeight: 1.3,
@@ -238,7 +239,7 @@ export default async (post, readingTime = 1) => {
                                       width: 96,
                                       height: 96,
                                       borderRadius: "50%",
-                                      border: "3px solid #000",
+                                      border: "3px solid #eaedf3",
                                       marginRight: 16,
                                       objectFit: "cover",
                                     },
