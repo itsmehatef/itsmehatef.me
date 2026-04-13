@@ -15,4 +15,4 @@ what a cliche: "hello, world"! reminds me of reading this old ass book from 1989
 $ claude -p "say hi."
 ```
 
-maybe this really is an end of era.
+maybe this really is end of an era.
