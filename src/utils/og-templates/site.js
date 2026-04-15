@@ -95,7 +95,7 @@ export default async () => {
                           fontWeight: "bold",
                           margin: 0,
                         },
-                        children: "@realhatefk",
+                        children: "@itsmehatef",
                       },
                     },
                     {
@@ -117,7 +117,7 @@ export default async () => {
       width: 1200,
       height: 630,
       embedFont: true,
-      fonts: await loadGoogleFonts(SITE.desc + "@realhatefk"),
+      fonts: await loadGoogleFonts(SITE.desc + "@itsmehatef"),
     }
   );
 };

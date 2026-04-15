@@ -9,7 +9,7 @@ title: "About Hatef"
   class="w-full md:w-96 md:float-right md:ml-6 md:mb-4 mb-6 rounded-lg"
 />
 
-hi, i'm @realhatefk.
+hi, i'm @itsmehatef.
 
 i build random projects, based on whatever pops to my head. could be an app, web service, or even an ai agent.
 
@@ -17,15 +17,15 @@ this is where i post my thoughts, discoveries, or even if i learned something co
 
 thanks for reading!
 
-find me on [GitHub](https://github.com/realhatefk), [X](https://x.com/realhatefk), and [LinkedIn](https://www.linkedin.com/in/hatefkasraei/).
+find me on [GitHub](https://github.com/itsmehatef), [X](https://x.com/itsmehatef), and [LinkedIn](https://www.linkedin.com/in/hatefkasraei/).
 
 ## GitHub activity
 
 btw here's my github activity. its not the greenest, that just means life got in the way for a bit :)
 
-<a href="https://github.com/realhatefk" class="not-prose block">
+<a href="https://github.com/itsmehatef" class="not-prose block">
   <img
-    src="https://ghchart.rshah.org/realhatefk"
+    src="https://ghchart.rshah.org/itsmehatef"
     alt="Hatef's GitHub contribution chart"
     class="w-full h-auto my-4"
     loading="lazy"

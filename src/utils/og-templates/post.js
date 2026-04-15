@@ -265,7 +265,7 @@ export default async (post, readingTime = 1) => {
                                             overflow: "hidden",
                                             fontWeight: "bold",
                                           },
-                                          children: "@realhatefk",
+                                          children: "@itsmehatef",
                                         },
                                       },
                                       {
@@ -319,7 +319,7 @@ export default async (post, readingTime = 1) => {
         post.data.title +
           post.data.author +
           (description || "") +
-          "by @realhatefk · min read 0123456789, " +
+          "by @itsmehatef · min read 0123456789, " +
           "JanFebMarAprMayJunJulAugSepOctNovDec"
       ),
     }

@@ -13,7 +13,7 @@ export const SITE = {
   editPost: {
     enabled: false,
     text: "Edit page",
-    url: "https://github.com/realhatefk/realhatefk.me/edit/main/",
+    url: "https://github.com/itsmehatef/itsmehatef.me/edit/main/",
   },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"

@@ -5,7 +5,7 @@ export default config({
     kind: "local",
   },
   ui: {
-    brand: { name: "realhatefk.me" },
+    brand: { name: "itsmehatef.me" },
   },
   collections: {
     posts: collection({
