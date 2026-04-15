@@ -9,7 +9,7 @@ title: "About Hatef"
   class="w-full md:w-96 md:float-right md:ml-6 md:mb-4 mb-6 rounded-lg"
 />
 
-hi, i'm @itsmehatef.
+hi, @itsmehatef.
 
 i build random projects, based on whatever pops to my head. could be an app, web service, or even an ai agent.
 
