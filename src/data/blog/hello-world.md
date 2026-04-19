@@ -5,7 +5,7 @@ pubDatetime: 2026-04-12T22:18:00.000Z
 description: does anyone still write hello world?
 tags:
   - meta
-featured: true
+featured: false
 draft: false
 hideEditPost: false
 ---
