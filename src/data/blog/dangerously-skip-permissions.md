@@ -26,3 +26,5 @@ so the project im working on has a home variable where it defines the home direc
 this just shows how important designing agents with access control and sandboxing from ground up has become. if you want to work with someone on a project, do you tell them sit behind your laptop and take the wheel? or you give them their own setup?
 
 my mistake was that i gave claude code my own personal set up and let it do anything it wants. don't get me wrong, im still gonna run it with —dangerously-skip-permissions flag, but i think it's time we do this right.
+
+this type thing is the exact reason i've started [dclaw](https://github.com/itsmehatef/dclaw). a image based agent framework that mitigates the risk of bad behavior. more on that later. irony is it was during smoke testing dclaw that this happened 🫠
