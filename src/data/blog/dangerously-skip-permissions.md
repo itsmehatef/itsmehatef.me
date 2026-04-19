@@ -1,7 +1,7 @@
 ---
 title: dangerously skip permissions
 author: hatef
-pubDatetime: 2026-04-19T12:00:00.000Z
+pubDatetime: 2026-04-19T02:00:00.000Z
 description: how --dangerously-skip-permissions wiped my home directory, and what i learned.
 tags:
   - agents
